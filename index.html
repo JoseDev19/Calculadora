@@ -2,7 +2,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Calculadora de sueldo bruto a neto 2026 (España) | SueldoNeto</title>
 <meta name="description" content="Calcula tu sueldo neto mensual a partir del bruto anual: IRPF, Seguridad Social, 12 o 14 pagas e hijos. Gratis y sin registro.">
-<link rel="stylesheet" href="style.css"></head><body>
+<link rel="stylesheet" href="style.css"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9515962302885451"
+     crossorigin="anonymous"></script>
+</head><body>
 <header><div><b>SueldoNeto</b><nav><a href="#calculadora">Calculadora</a><a href="#como">Cómo se calcula</a><a href="#faq">Preguntas</a><a href="legal.html#contacto">Contacto</a></nav></div></header>
 <main>
 <h1>Calculadora de sueldo bruto a neto</h1>
@@ -41,7 +43,6 @@
 <details><summary>¿Tiene en cuenta mi comunidad autónoma?</summary><p>De momento usa una escala media. Cada comunidad puede variar unos puntos en el IRPF.</p></details>
 </main>
 <footer><a href="legal.html#privacidad">Privacidad</a><a href="legal.html#aviso">Aviso legal</a><a href="legal.html#cookies">Cookies</a><a href="legal.html#contacto">Contacto</a><a href="legal.html#sobre">Sobre nosotros</a><p>© SueldoNeto. Herramienta informativa, no sustituye a un asesor.</p></footer>
-<div id="ck" role="dialog" aria-label="Cookies"><span>Usamos cookies para mostrar anuncios. <a href="legal.html#cookies">Más información</a></span><button id="ok">Aceptar</button><button id="no">Rechazar</button></div>
 <script>
 function sc(x){var t=[[12450,.19],[20200,.24],[35200,.30],[60000,.37],[300000,.45],[1e12,.47]],r=0,p=0;t.forEach(function(a){if(x>p){r+=(Math.min(x,a[0])-p)*a[1];p=a[0]}});return r}
 var E=function(n){return n.toLocaleString('es-ES',{style:'currency',currency:'EUR'})},$=function(i){return document.getElementById(i)};
@@ -53,4 +54,4 @@ var irpf=Math.max(0,sc(base)-sc(min)),neto=G-ss-irpf;
 $('rm').textContent=G?E(neto/P):'–';$('rn').textContent=E(neto);$('ri').textContent=E(irpf);$('rs').textContent=E(ss);$('rr').textContent=G?(irpf/G*100).toFixed(2).replace('.',',')+' %':'–';
 if(G){$('b1').style.width=neto/G*100+'%';$('b2').style.width=irpf/G*100+'%';$('b3').style.width=ss/G*100+'%'}}
 $('b').onclick=calc;['g','p','t','h','m'].forEach(function(i){$(i).oninput=calc});calc();
-</script><script src="site.js"></script></body></html>
+</script></body></html>
