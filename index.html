@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Calculadora de sueldo bruto a neto 2026 (España) | SueldoNeto</title>
+<meta name="description" content="Calcula tu sueldo neto mensual a partir del bruto anual: IRPF, Seguridad Social, 12 o 14 pagas e hijos. Gratis y sin registro.">
+<link rel="stylesheet" href="style.css"></head><body>
+<header><div><b>SueldoNeto</b><nav><a href="#calculadora">Calculadora</a><a href="#como">Cómo se calcula</a><a href="#faq">Preguntas</a><a href="legal.html#contacto">Contacto</a></nav></div></header>
+<main>
+<h1>Calculadora de sueldo bruto a neto</h1>
+<p class="sub">Escribe tu sueldo bruto anual y mira cuánto cobrarás cada mes después de IRPF y Seguridad Social.</p>
+<div class="ad" aria-label="Publicidad">Anuncio</div>
+<div class="calc" id="calculadora">
+<div class="box">
+<label for="g">Sueldo bruto anual (€)</label><input id="g" type="number" inputmode="decimal" min="0" value="24000">
+<label for="p">Número de pagas</label><select id="p"><option value="14">14 (2 extras)</option><option value="12">12 (extras prorrateadas)</option></select>
+<label for="t">Tipo de contrato</label><select id="t"><option value="i">Indefinido</option><option value="t">Temporal</option></select>
+<label for="h">Hijos a tu cargo</label><select id="h"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select>
+<label for="m">De ellos, menores de 3 años</label><select id="m"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select>
+<button id="b">Calcular sueldo neto</button>
+</div>
+<div class="box slip" aria-live="polite">
+<div class="k">Cobras al mes</div><p class="big" id="rm">–</p>
+<div class="bar"><i id="b1" style="background:var(--net)"></i><i id="b2" style="background:var(--irpf)"></i><i id="b3" style="background:var(--ss)"></i></div>
+<div class="k">Verde: neto · Naranja: IRPF · Azul: Seguridad Social</div>
+<div class="row"><span>Neto anual</span><b id="rn">–</b></div>
+<div class="row"><span>IRPF anual</span><b id="ri">–</b></div>
+<div class="row"><span>Seguridad Social anual</span><b id="rs">–</b></div>
+<div class="row"><span>Retención IRPF</span><b id="rr">–</b></div>
+</div></div>
+<p class="k">Cálculo orientativo con la escala general de IRPF (estatal + autonómica media) y cotizaciones de 2026. Tu nómina real puede variar según tu comunidad, convenio y situación personal.</p>
+<div class="ad" aria-label="Publicidad">Anuncio</div>
+<h2 id="como">Cómo se calcula el sueldo neto</h2>
+<p>Al sueldo bruto se le restan dos cosas: lo que cotizas a la <b>Seguridad Social</b> y la <b>retención del IRPF</b>. Lo que queda es tu sueldo neto.</p>
+<p><b>Seguridad Social.</b> El trabajador paga aproximadamente un 6,5 % del bruto en un contrato indefinido: 4,70 % de contingencias comunes, 1,55 % de desempleo, 0,10 % de formación profesional y 0,15 % del Mecanismo de Equidad Intergeneracional. En un contrato temporal el desempleo sube al 1,60 %. Hay una base máxima de cotización, por encima de la cual no se paga más.</p>
+<p><b>IRPF.</b> Se aplica una escala progresiva: cuanto más ganas, mayor es el porcentaje en los tramos altos. Antes se descuentan 2.000 € de gastos deducibles, una reducción para sueldos bajos y el mínimo personal (5.550 €) más el mínimo por hijos. Por eso dos personas con el mismo bruto pueden cobrar neto distinto.</p>
+<h2>¿Por qué importa si tengo 12 o 14 pagas?</h2>
+<p>El neto anual es el mismo. Con 14 pagas cobras menos cada mes, pero recibes dos pagas extra. Con 12 pagas las extras están repartidas en cada mes.</p>
+<h2 id="faq">Preguntas frecuentes</h2>
+<details><summary>¿Qué es el sueldo bruto?</summary><p>Es lo que figura en tu contrato antes de descontar impuestos y cotizaciones.</p></details>
+<details><summary>¿Es lo mismo que la retención de mi nómina?</summary><p>Se parece mucho, pero tu empresa calcula la retención con tus datos exactos. La diferencia se ajusta en la declaración de la renta.</p></details>
+<details><summary>¿Los datos que escribo se guardan?</summary><p>No. El cálculo se hace en tu navegador y no se envía a ningún servidor.</p></details>
+<details><summary>¿Tiene en cuenta mi comunidad autónoma?</summary><p>De momento usa una escala media. Cada comunidad puede variar unos puntos en el IRPF.</p></details>
+</main>
+<footer><a href="legal.html#privacidad">Privacidad</a><a href="legal.html#aviso">Aviso legal</a><a href="legal.html#cookies">Cookies</a><a href="legal.html#contacto">Contacto</a><a href="legal.html#sobre">Sobre nosotros</a><p>© SueldoNeto. Herramienta informativa, no sustituye a un asesor.</p></footer>
+<div id="ck" role="dialog" aria-label="Cookies"><span>Usamos cookies para mostrar anuncios. <a href="legal.html#cookies">Más información</a></span><button id="ok">Aceptar</button><button id="no">Rechazar</button></div>
+<script>
+function sc(x){var t=[[12450,.19],[20200,.24],[35200,.30],[60000,.37],[300000,.45],[1e12,.47]],r=0,p=0;t.forEach(function(a){if(x>p){r+=(Math.min(x,a[0])-p)*a[1];p=a[0]}});return r}
+var E=function(n){return n.toLocaleString('es-ES',{style:'currency',currency:'EUR'})},$=function(i){return document.getElementById(i)};
+function calc(){var G=Math.max(0,+$('g').value||0),P=+$('p').value,h=+$('h').value,m=Math.min(+$('m').value,h);
+var ss=Math.min(G,61214.4)*($('t').value==='t'?.0655:.065),rn=G-ss-2000,red=0;
+if(rn<=14852)red=7302;else if(rn<=17673.52)red=7302-1.75*(rn-14852);else if(rn<=19747.5)red=2364.34-1.14*(rn-17673.52);
+var base=Math.max(0,rn-Math.max(0,red)),d=[2400,2700,4000,4500],min=5550+m*2800;for(var i=0;i<h;i++)min+=d[i];
+var irpf=Math.max(0,sc(base)-sc(min)),neto=G-ss-irpf;
+$('rm').textContent=G?E(neto/P):'–';$('rn').textContent=E(neto);$('ri').textContent=E(irpf);$('rs').textContent=E(ss);$('rr').textContent=G?(irpf/G*100).toFixed(2).replace('.',',')+' %':'–';
+if(G){$('b1').style.width=neto/G*100+'%';$('b2').style.width=irpf/G*100+'%';$('b3').style.width=ss/G*100+'%'}}
+$('b').onclick=calc;['g','p','t','h','m'].forEach(function(i){$(i).oninput=calc});calc();
+</script><script src="site.js"></script></body></html>
